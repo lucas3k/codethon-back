@@ -2,7 +2,7 @@ import 'dotenv/config'
 import Fastify from 'fastify'
 import { log } from 'console'
 import { test } from './routes/getTest'
-import { postUserAdmin } from './routes/admin/postUserAdmin'
+import { postUserAdmin, getUserAdmin } from './routes/admin'
 import { deletePet, getAllPet, getPetById, postPet, putPet } from './routes/pet'
 
 const app = Fastify({ logger: true })
@@ -11,6 +11,7 @@ const PORT = Number(process.env.PORT) || 3000
 // Register the routers!
 app.register(test)
 app.register(postUserAdmin)
+app.register(getUserAdmin)
 app.register(postPet)
 app.register(getAllPet)
 app.register(getPetById)
