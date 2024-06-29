@@ -1,12 +1,16 @@
 import 'dotenv/config'
 import Fastify from 'fastify'
 import { log } from 'console'
+import cors from '@fastify/cors'
 import { test } from './routes/getTest'
 import { postUserAdmin, getUserAdmin } from './routes/admin'
 import { deletePet, getAllPet, getPetById, postPet, putPet } from './routes/pet'
 
 const app = Fastify({ logger: true })
 const PORT = Number(process.env.PORT) || 3000
+
+// cors
+app.register(cors)
 
 // Register the routers!
 app.register(test)
