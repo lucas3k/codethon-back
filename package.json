@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "tsx watch src/http/server.ts",
     "build": "tsup src/http/server.ts",
-    "start": "node dist/http/server.js"
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
